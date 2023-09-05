@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>欢迎！</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2023-09-05T13:40:19.013Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>你别睡这么晚</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端文章</title>
+    <link href="http://example.com/2023/09/05/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0/"/>
+    <id>http://example.com/2023/09/05/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0/</id>
+    <published>2023-09-05T13:08:15.000Z</published>
+    <updated>2023-09-05T13:40:19.013Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前端体系梳理"><a href="#前端体系梳理" class="headerlink" title="前端体系梳理"></a>前端体系梳理</h2><p><a href="https://segmentfault.com/a/1190000013662126">从输入 URL 到页面加载的过程？如何由一道题完善自己的前端知识体系！</a></p><h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><p><a href="https://www.cnblogs.com/chenyoumei/p/9156849.html">浏览器渲染页面的原理和流程</a></p><p><a href="https://segmentfault.com/a/1190000014383214">V8 引擎垃圾回收</a></p><h2 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML &amp;&amp; CSS"></a>HTML &amp;&amp; CSS</h2><p><a href="https://www.jianshu.com/p/f5ffd5e014a9">script 标签 async 和 defer 区别</a><br><a href="https://www.jianshu.com/p/9a463d50e441">CSS 绘制三角形</a></p><h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><a href="https://www.cnblogs.com/wangfupeng1988/p/3977924.html">深入理解 javascript 原型和闭包</a><br><a href="https://zhuanlan.zhihu.com/p/26229293">深入浅出 Javascript 事件循环机制(上)</a><br><a href="https://zhuanlan.zhihu.com/p/46068171">深入理解 JavaScript 的事件循环</a><br><a href="https://zhuanlan.zhihu.com/p/72507900">如何解释 Event Loop 面试官才满意？</a><br><a href="https://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html">理解作用域和作用域链</a></p><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><p><a href="https://www.cnblogs.com/canfoo/p/6891868.html">Vue 双向绑定原理及实现</a><br><a href="https://blog.csdn.net/w993263495/article/details/85030839">Vuejs 如何实现双向绑定</a><br><a href="https://segmentfault.com/a/1190000006599500">剖析 Vue 原理&amp;实现双向绑定 MVVM</a><br><a href="https://www.cnblogs.com/lgt-hello-world/p/12620073.html">vue 生命周期</a><br><a href="https://www.jianshu.com/p/7af8554d8f08">v-if 与 v-show 的区别</a></p><h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p><a href="https://www.pianshen.com/article/68431265749/">TCP 三次握手最后一次失败怎么办</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前端体系梳理&quot;&gt;&lt;a href=&quot;#前端体系梳理&quot; class=&quot;headerlink&quot; title=&quot;前端体系梳理&quot;&gt;&lt;/a&gt;前端体系梳理&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000013662126&quot;&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>其他文章</title>
+    <link href="http://example.com/2023/09/05/%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/"/>
+    <id>http://example.com/2023/09/05/%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/</id>
+    <published>2023-09-05T12:58:15.000Z</published>
+    <updated>2023-09-05T13:39:56.604Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/97ba64888894">Postman 教程</a></p><h2 id="我爱-GTA"><a href="#我爱-GTA" class="headerlink" title="我爱 GTA"></a>我爱 GTA</h2><p><a href="https://zhidao.baidu.com/question/1900115355228272460.html">GTA 圣安地列斯秘籍</a></p><h2 id="阿里云部署-Node"><a href="#阿里云部署-Node" class="headerlink" title="阿里云部署 Node"></a>阿里云部署 Node</h2><p><a href="https://developer.aliyun.com/article/80217">如何快速部署 Node.js 项目</a><br><a href="https://blog.csdn.net/weixin_43503511/article/details/86670345">为阿里云服务器 ECS 实例安装 Nodejs</a></p><h2 id="我爱-MATLAB"><a href="#我爱-MATLAB" class="headerlink" title="我爱 MATLAB"></a>我爱 MATLAB</h2><p><a href="https://www.ilovematlab.cn/">MATLAB 中文论坛</a><br><a href="https://blog.csdn.net/qq_44868807/article/details/106628113">MATLAB—GUI 新手入门教程</a><br><a href="https://www.bilibili.com/video/BV1o5411W7dF">MATLAB GUI 界面设计 数字图像处理</a></p><h2 id="Python-Keras-深度学习"><a href="#Python-Keras-深度学习" class="headerlink" title="Python &amp; Keras 深度学习"></a>Python &amp; Keras 深度学习</h2><p>多标签分类器：</p><p><a href="https://www.pyimagesearch.com/2018/05/07/multi-label-classification-with-keras/">Multi-label classification with Keras</a><br><a href="https://www.pyimagesearch.com/2018/04/16/keras-and-convolutional-neural-networks-cnns/">Keras and Convolutional Neural Networks (CNNs)</a><br><a href="https://www.pyimagesearch.com/2018/04/09/how-to-quickly-build-a-deep-learning-image-dataset/">How to (quickly) build a deep learning image dataset</a><br><a href="https://blog.csdn.net/lc013/article/details/100033158">基于 Keras 的多标签图像分类器</a><br><a href="https://blog.csdn.net/tMb8Z9Vdm66wH68VX1/article/details/81090757">手把手教你用 Keras 进行多标签分类</a><br><a href="https://blog.csdn.net/qq_37764129/article/details/100853805">多标签分类（基于 Keras）</a><br><a href="https://blog.csdn.net/lly1122334/article/details/88806913">使用 Keras 进行单模型多标签分类</a><br><a href="https://blog.csdn.net/tMb8Z9Vdm66wH68VX1/article/details/81713585">教你用 Keras 和 CNN 建立模型识别神奇宝贝</a></p><p>深度学习：</p><p><a href="https://blog.csdn.net/qq_15192373/article/details/89552498">One-Hot 独热编码</a><br><a href="https://blog.csdn.net/zziahgf/article/details/79614822">VGGNet 阅读理解</a><br><a href="https://blog.csdn.net/u013181595/article/details/80974210">VGGNet 介绍</a></p><p>Keras 深度学习框架：</p><p><a href="https://keras-zh.readthedocs.io/">Keras 中文文档</a><br><a href="https://www.bilibili.com/video/BV1gE411R7jd">Keras 深度学习简明教程</a><br><a href="https://www.jianshu.com/p/c98a24cfa821/">Keras 深度学习数据集</a><br><a href="https://blog.csdn.net/weixin_43935696/article/details/112214007">keras.layers.BatchNormalization 解析</a><br><a href="https://www.jianshu.com/p/a3f3033a7379">Keras 中的 Embedding 简单理解</a><br><a href="https://blog.csdn.net/moyu123456789/article/details/83444140">Keras 中 to_categorical 函数解析</a><br><a href="https://blog.csdn.net/qq_29676179/article/details/118001025">Keras 用 fit 训练模型时,batch_size，steps_per_epoch 的含义</a><br><a href="https://blog.csdn.net/weixin_40244676/article/details/105091539">model.fit()详解</a><br><a href="https://blog.csdn.net/qq_27825451/article/details/90056896">Keras 图像预处理-ImageDataGenerator 类</a><br><a href="https://www.pythonheidong.com/blog/article/430947/349baf46280172a88c55/">Keras.preprocessing.image 中的 img_to_array</a><br><a href="https://www.cnblogs.com/zhibei/p/12070046.html">sigmoid 和 softmax 的应用意义区别</a><br><a href="https://www.yisu.com/zixun/231984.html">如何理解 K.image_data_format() &#x3D;&#x3D; ‘channels_first’</a><br><a href="https://blog.csdn.net/lovebyz/article/details/77712003">Keras-text.Tokenizer：文本与序列预处理</a><br><a href="https://blog.csdn.net/wcy23580/article/details/84957471">序列预处理 pad_sequences()序列填充</a></p><p>Python 模块：</p><p><a href="http://www.weixueyuan.net/a/633.html">Python pickle 模块的用法</a><br><a href="https://www.cnblogs.com/Yanjy-OnlyOne/p/11288098.html">sklearn 的 train_test_split()函数参数含义</a><br><a href="https://blog.csdn.net/Einstellung/article/details/90634159">imutils 用法</a><br><a href="https://zhuanlan.zhihu.com/p/56922793">argparse 模块用法实例详解</a><br><a href="https://blog.csdn.net/u012052268/article/details/77720645/">标签二值化 LabelBinarizer</a><br><a href="https://blog.csdn.net/qq_41185868/article/details/79675875">CV2 库</a></p><p>实际操作：</p><p><a href="https://www.cnblogs.com/thewaytotheway/p/12847260.html">使用 pip 安装 Opencv</a><br><a href="https://www.cnblogs.com/Qi77/p/12514730.html">Python 安装 gensim</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.jianshu.com/p/97ba64888894&quot;&gt;Postman 教程&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;我爱-GTA&quot;&gt;&lt;a href=&quot;#我爱-GTA&quot; class=&quot;headerlink&quot; title=&quot;我爱 GTA&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网站推荐</title>
+    <link href="http://example.com/2023/09/05/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/"/>
+    <id>http://example.com/2023/09/05/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</id>
+    <published>2023-09-05T12:48:15.000Z</published>
+    <updated>2023-09-05T13:39:44.613Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h2><p><a href="https://gitee.com/">Gitee</a><br><a href="https://github.com/">Github</a><br><a href="https://www.nowcoder.com/">NOWCODER</a><br><a href="https://leetcode-cn.com/">LeetCode</a><br><a href="https://codetop.cc/home">CodeTop</a><br><a href="https://www.wondercv.com/">WonderCV</a><br><a href="https://mail.qq.com/">QQMail</a><br><a href="https://email.163.com/">NetEase Mail</a><br><a href="https://www.bilibili.com/">bilibili</a><br><a href="https://www.zhihu.com/">知乎</a><br><a href="https://36kr.com/">36 氪</a><br><a href="https://juejin.cn/">掘金</a><br><a href="https://www.jianshu.com/">简书</a><br><a href="https://www.feishu.cn/">飞书</a><br><a href="https://shimo.im/">石墨文档</a><br><a href="https://weread.qq.com/">微信读书</a><br><a href="https://haoma.baidu.com/">百度号码平台</a><br><a href="https://fanyi.baidu.com/">百度翻译</a><br><a href="https://www.baidu.com/">百度一下</a></p><h2 id="我爱项目"><a href="#我爱项目" class="headerlink" title="我爱项目"></a>我爱项目</h2><p><a href="http://doc.toutiao.liulongbin.top/">黑马头条-移动端</a></p><h2 id="我爱视频"><a href="#我爱视频" class="headerlink" title="我爱视频"></a>我爱视频</h2><p><a href="https://www.bilibili.com/video/BV14J4114768">黑马 pink 前端教程</a><br><a href="https://www.bilibili.com/video/BV1ux411d75J">黑马 JavaScript 基础</a><br><a href="https://www.bilibili.com/video/BV1k4411w7sV">黑马 JS DOM BOM 教程</a><br><a href="https://www.bilibili.com/video/BV1a4411w7Gx">黑马 jQuery</a><br><a href="https://www.bilibili.com/video/BV1zz411q7j3">黑马 ES6 高级语法</a><br><a href="https://www.bilibili.com/video/BV12J411m7MG">黑马 4 小时上手 Vue</a><br><a href="https://www.bilibili.com/video/BV1RE411W776">黑马 Vue 音乐播放器</a><br><a href="https://www.bilibili.com/video/BV1zq4y1p7ga">黑马 Vue2+Vue3 全套</a><br><a href="https://www.bilibili.com/video/BV1x64y1S7S7">黑马 Vue 全家桶实战</a><br><a href="https://www.bilibili.com/video/BV14y4y1g7M4">黑马 React</a><br><a href="https://www.bilibili.com/video/BV1Ns411N7HU">黑马 Node</a><br><a href="https://www.bilibili.com/video/BV1uK411H7on">尚硅谷 ES6 教程</a><br><a href="https://www.bilibili.com/video/BV1WC4y1b78y">尚硅谷 3 小时入门 Ajax</a><br><a href="https://www.bilibili.com/video/BV1vy4y1s7k6">尚硅谷 5 小时打通 Git</a><br><a href="https://www.bilibili.com/video/BV1e7411j7T5">尚硅谷 Webpack</a><br><a href="https://www.bilibili.com/video/BV1bs411E7pD">尚硅谷 Node</a><br><a href="https://www.bilibili.com/video/BV1Zy4y1K7SH">尚硅谷 Vue2+Vue3 全套</a><br><a href="https://www.bilibili.com/video/BV1Vf4y1T7bw">尚硅谷 Vue 项目：尚品汇</a><br><a href="https://www.bilibili.com/video/BV1wy4y1D7JT">尚硅谷 React</a><br><a href="https://www.bilibili.com/video/BV15741177Eh">coderwhy Vue</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;常用网站&quot;&gt;&lt;a href=&quot;#常用网站&quot; class=&quot;headerlink&quot; title=&quot;常用网站&quot;&gt;&lt;/a&gt;常用网站&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://gitee.com/&quot;&gt;Gitee&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://git</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="http://example.com/2023/09/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://example.com/2023/09/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <published>2023-09-05T12:38:15.000Z</published>
+    <updated>2023-09-05T12:38:15.306Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2023/09/05/hello-world/"/>
+    <id>http://example.com/2023/09/05/hello-world/</id>
+    <published>2023-09-05T11:28:04.649Z</published>
+    <updated>2023-09-05T11:28:04.650Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
