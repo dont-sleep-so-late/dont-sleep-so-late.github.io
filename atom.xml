@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>欢迎！</title>
+  <title>欢迎来到你别睡这么晚的博客！</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://github.com/dont-sleep-so-late/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://github.com/dont-sleep-so-late/"/>
   <updated>2023-09-05T13:40:19.013Z</updated>
-  <id>http://example.com/</id>
+  <id>https://github.com/dont-sleep-so-late/</id>
   
   <author>
     <name>你别睡这么晚</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>前端文章</title>
-    <link href="http://example.com/2023/09/05/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0/"/>
-    <id>http://example.com/2023/09/05/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0/</id>
+    <link href="https://github.com/dont-sleep-so-late/2023/09/05/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0/"/>
+    <id>https://github.com/dont-sleep-so-late/2023/09/05/%E5%89%8D%E7%AB%AF%E6%96%87%E7%AB%A0/</id>
     <published>2023-09-05T13:08:15.000Z</published>
     <updated>2023-09-05T13:40:19.013Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>其他文章</title>
-    <link href="http://example.com/2023/09/05/%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/"/>
-    <id>http://example.com/2023/09/05/%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/</id>
+    <link href="https://github.com/dont-sleep-so-late/2023/09/05/%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/"/>
+    <id>https://github.com/dont-sleep-so-late/2023/09/05/%E5%85%B6%E4%BB%96%E6%96%87%E7%AB%A0/</id>
     <published>2023-09-05T12:58:15.000Z</published>
     <updated>2023-09-05T13:39:56.604Z</updated>
     
@@ -59,8 +59,8 @@
   
   <entry>
     <title>网站推荐</title>
-    <link href="http://example.com/2023/09/05/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/"/>
-    <id>http://example.com/2023/09/05/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</id>
+    <link href="https://github.com/dont-sleep-so-late/2023/09/05/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/"/>
+    <id>https://github.com/dont-sleep-so-late/2023/09/05/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</id>
     <published>2023-09-05T12:48:15.000Z</published>
     <updated>2023-09-05T13:39:44.613Z</updated>
     
@@ -79,8 +79,8 @@
   
   <entry>
     <title>我的第一篇博客</title>
-    <link href="http://example.com/2023/09/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://example.com/2023/09/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <link href="https://github.com/dont-sleep-so-late/2023/09/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://github.com/dont-sleep-so-late/2023/09/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-09-05T12:38:15.000Z</published>
     <updated>2023-09-05T12:38:15.306Z</updated>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2023/09/05/hello-world/"/>
-    <id>http://example.com/2023/09/05/hello-world/</id>
+    <link href="https://github.com/dont-sleep-so-late/2023/09/05/hello-world/"/>
+    <id>https://github.com/dont-sleep-so-late/2023/09/05/hello-world/</id>
     <published>2023-09-05T11:28:04.649Z</published>
     <updated>2023-09-05T11:28:04.650Z</updated>
     
