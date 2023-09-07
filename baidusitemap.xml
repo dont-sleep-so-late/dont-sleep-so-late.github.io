@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2023/09/06/grid/</loc>
+    <lastmod>2023-09-07</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vuex/</loc>
+    <lastmod>2023-09-07</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue_core_basis/</loc>
+    <lastmod>2023-09-07</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue_component_coding/</loc>
+    <lastmod>2023-09-07</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue_cli/</loc>
+    <lastmod>2023-09-07</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue3/</loc>
+    <lastmod>2023-09-07</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2023/09/06/html/</loc>
     <lastmod>2023-09-06</lastmod>
   </url>
@@ -17,10 +41,6 @@
     <lastmod>2023-09-06</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2023/09/06/grid/</loc>
-    <lastmod>2023-09-06</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/2023/09/06/array/</loc>
     <lastmod>2023-09-06</lastmod>
   </url>
@@ -33,27 +53,11 @@
     <lastmod>2023-09-06</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2023/09/06/vue_core_basis/</loc>
-    <lastmod>2023-09-06</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vue_component_coding/</loc>
-    <lastmod>2023-09-06</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/2023/09/06/vue_component_advanced/</loc>
     <lastmod>2023-09-06</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2023/09/06/vue_cli/</loc>
-    <lastmod>2023-09-06</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/2023/09/06/vue_network_request/</loc>
-    <lastmod>2023-09-06</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vuex/</loc>
     <lastmod>2023-09-06</lastmod>
   </url>
   <url>
@@ -66,10 +70,6 @@
   </url>
   <url>
     <loc>http://example.com/2023/09/06/what_is_js/</loc>
-    <lastmod>2023-09-06</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vue3/</loc>
     <lastmod>2023-09-06</lastmod>
   </url>
   <url>
