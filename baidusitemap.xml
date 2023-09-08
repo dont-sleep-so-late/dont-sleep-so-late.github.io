@@ -5,51 +5,11 @@
     <lastmod>2023-09-08</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2023/09/06/grid/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/flex/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/less/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vue_cli/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/css/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vue3/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vue_component_coding/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vue_component_advanced/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/what_is_js/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/vue_network_request/</loc>
+    <loc>http://example.com/2023/09/06/js_modules/</loc>
     <lastmod>2023-09-08</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/09/06/vue_router/</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/js_modules/</loc>
     <lastmod>2023-09-08</lastmod>
   </url>
   <url>
@@ -61,11 +21,51 @@
     <lastmod>2023-09-08</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2023/09/06/vuex/</loc>
+    <loc>http://example.com/2023/09/06/vue_network_request/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/what_is_js/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue_component_advanced/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue_component_coding/</loc>
     <lastmod>2023-09-08</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/09/06/vue_core_basis/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/css/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue_cli/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/less/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/grid/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/flex/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vue3/</loc>
+    <lastmod>2023-09-08</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/06/vuex/</loc>
     <lastmod>2023-09-08</lastmod>
   </url>
   <url>
