@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2023/09/06/git/</loc>
+    <lastmod>2023-09-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/12/Git%20%E7%9B%B8%E5%85%B3%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2023-09-12</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/09/12/%E5%9F%BA%E4%BA%8E-json-server-%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%87%86%E5%A4%87%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%9C%8D%E5%8A%A1%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2023-09-12</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2023/09/11/2023-09-11-Vue-%E6%90%9C%E7%B4%A2%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2023-09-12</lastmod>
   </url>
@@ -122,10 +134,6 @@
   </url>
   <url>
     <loc>http://example.com/categories/index-3.html</loc>
-    <lastmod>2023-09-08</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/09/06/git/</loc>
     <lastmod>2023-09-08</lastmod>
   </url>
   <url>
