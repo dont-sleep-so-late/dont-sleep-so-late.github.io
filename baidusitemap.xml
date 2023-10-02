@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://dont-sleep-so-late.github.io/2023/09/06/git/</loc>
+    <lastmod>2023-10-02</lastmod>
+  </url>
+  <url>
     <loc>https://dont-sleep-so-late.github.io/2023/09/27/%E8%BD%AF%E4%BB%B6%E5%AF%BC%E8%88%AA/</loc>
     <lastmod>2023-09-27</lastmod>
   </url>
@@ -14,7 +18,7 @@
   </url>
   <url>
     <loc>https://dont-sleep-so-late.github.io/2023/09/05/%E7%BD%91%E7%AB%99%E6%8E%A8%E8%8D%90/</loc>
-    <lastmod>2023-09-26</lastmod>
+    <lastmod>2023-09-27</lastmod>
   </url>
   <url>
     <loc>https://dont-sleep-so-late.github.io/2023/09/11/2023-09-11-Vue-%E6%90%9C%E7%B4%A2%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E7%AE%A1%E7%90%86/</loc>
@@ -22,10 +26,6 @@
   </url>
   <url>
     <loc>https://dont-sleep-so-late.github.io/2023/09/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2023-09-25</lastmod>
-  </url>
-  <url>
-    <loc>https://dont-sleep-so-late.github.io/2023/09/06/git/</loc>
     <lastmod>2023-09-25</lastmod>
   </url>
   <url>
