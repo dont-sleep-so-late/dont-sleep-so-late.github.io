@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git基本操作</title>
+      <link href="/2023/10/02/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+      <url>/2023/10/02/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="账户配置"><a href="#账户配置" class="headerlink" title="账户配置"></a>账户配置</h2><ol><li>配置全局账户，对所有 Git 仓库有效</li></ol><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&#x27;Your Name&#x27;</span></span><br><span class="line">git config --global user.email <span class="string">&#x27;Your Email&#x27;</span></span><br></pre></td></tr></table></figure><ol start="2"><li>配置局部账户，只对当前 Git 仓库有效</li></ol><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="built_in">local</span> user.name <span class="string">&#x27;Your Name&#x27;</span></span><br><span class="line">git config --<span class="built_in">local</span> user.email <span class="string">&#x27;Your Email&#x27;</span></span><br></pre></td></tr></table></figure><ol start="3"><li>查看全局配置</li></ol><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --list</span><br></pre></td></tr></table></figure><ol start="4"><li>查看局部配置</li></ol><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="built_in">local</span> --list</span><br></pre></td></tr></table></figure><h2 id="生成ssh-密钥"><a href="#生成ssh-密钥" class="headerlink" title="生成ssh 密钥"></a>生成ssh 密钥</h2><p>连接到github仓库，公钥文件存放在C:&#x2F;用户文件夹&#x2F;.ssh&#x2F;id_rsa.pub</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br><span class="line">ssh -T git@github.com   //测试连接命令</span><br></pre></td></tr></table></figure><hr><h2 id="上传操作"><a href="#上传操作" class="headerlink" title="上传操作"></a>上传操作</h2><p>1.找到想要上传的文件夹，进入并点击 git sh here</p><p>然后输入 <code>git init</code></p><p>然后输入 <code>git remote add origin https://gitee.com/[码云的用户名]/[仓库路径].git</code><br>这里建议直接复制</p><p>然后 <code>git add ./</code> .&#x2F;表示当前文件夹内所有文件</p><p>然后 <code>git commit -m &quot;上传的信息&quot;</code></p><p>然后 <code>git push origin master</code> 查看gitee上发现文件上传成功</p><p>上面是第一次创建远程仓库的情况</p><p>如果有新的文件，从<code>git add [文件名]</code> 处开始即可。</p><hr><h2 id="git-push-error-failed-to-push-some-refs-to-异常处理"><a href="#git-push-error-failed-to-push-some-refs-to-异常处理" class="headerlink" title="git push error: failed to push some refs to 异常处理"></a>git push error: failed to push some refs to 异常处理</h2><h2 id="一、异常错误"><a href="#一、异常错误" class="headerlink" title="一、异常错误"></a>一、异常错误</h2><ul><li>使用Github时，<code>git push</code>命令出现 <code>error: failed to push some refs to &#39;git@github.com:xxxxx&#39;</code>错误</li></ul><h2 id="二、原因"><a href="#二、原因" class="headerlink" title="二、原因"></a>二、原因</h2><ul><li>远端仓库更新数据未同步到本地</li></ul><p><img src="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/20231002092020.png"></p><h2 id="三、解决方法"><a href="#三、解决方法" class="headerlink" title="三、解决方法"></a>三、解决方法</h2><ul><li><p>先将远程代码库中文件pull到本地，进行代码合并，使用<code>git pull --rebase origin master</code></p></li><li><p>再push新的代码到Github代码库中，进行上传<code>git push -u origin master</code></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git仓库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软件导航</title>
       <link href="/2023/09/27/%E8%BD%AF%E4%BB%B6%E5%AF%BC%E8%88%AA/"/>
       <url>/2023/09/27/%E8%BD%AF%E4%BB%B6%E5%AF%BC%E8%88%AA/</url>
