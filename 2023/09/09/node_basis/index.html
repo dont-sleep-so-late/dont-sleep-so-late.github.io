@@ -1,0 +1,597 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Nodejs基础 | 你别睡这么晚！</title><meta name="keywords" content="Nodejs"><meta name="author" content="你别睡这么晚"><meta name="copyright" content="你别睡这么晚"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Nodejs基础"><meta name="application-name" content="Nodejs基础"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Nodejs基础"><meta property="og:url" content="https://dont-sleep-so-late.github.io/2023/09/09/node_basis/index.html"><meta property="og:site_name" content="你别睡这么晚！"><meta property="og:description" content="官网传送门 初识 Nodejstip Node.js®Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine Node.js® 是一个基于 Chrome V8 引擎 的 JavaScript 运行时环境  基于"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://avatars.githubusercontent.com/u/47170023?v=4"><meta property="article:author" content="你别睡这么晚"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/47170023?v=4"><meta name="description" content="官网传送门 初识 Nodejstip Node.js®Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine Node.js® 是一个基于 Chrome V8 引擎 的 JavaScript 运行时环境  基于"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://dont-sleep-so-late.github.io/2023/09/09/node_basis/"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//npm.onmicrosoft.cn"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":15},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":16,"endTime":18},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":19,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: {"appId":"K880G321DE","apiKey":"5c9b9d0f591eb08ace149bf3d24ed065","indexName":"hexo","hits":{"per_page":6},"languages":{"input_placeholder":"输入关键词后按下回车查找","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 你别睡这么晚","link":"链接: ","source":"来源: 你别睡这么晚！","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '你别睡这么晚！',
+  title: 'Nodejs基础',
+  postAI: '',
+  pageFillDescription: '初识 Nodejs, Buffer 缓冲区, fs 文件系统模块, 读取文件, 简单文件读取, 流式文件读取, 写入文件, 简单文件写入, 流式文件写入, 路径动态拼接问题 __dirname, 其它操作, path 路径模块, 路径拼接 path.join(), 获取路径中文件名 path.basename(), 获取路径中文件扩展名 path.extname(), http 模块, 创建基本 Web 服务器, 实现简陋路由效果, 模块化, 模块化概念, Node.js 中模块的分类, Node.js 中的模块作用域, 模块作用域的成员, CommonJS 模块化规范, 模块加载机制, 内置模块加载, 自定义模块加载, 第三方模块加载, 目录作为模块加载官网传送门初识是一个基于引擎的运行时环境基于框架可以快速构建应用基于框架可以构建跨平台的桌面应用基于框架可以快速构建接口项目读写和操作数据库创建实用的命令行工具辅助前端开发缓冲区缓冲区文档的结构与数组类似操作方法也与数组类似数组不能存储二进制文件是专门存储二进制数据的存储的是二进制数据显示时以进制的形式显示每一个元素范围是即每一个元素占用一个字节内存是对底层内存的直接操作因此大小一旦确定就不能修改常用方法将一个字符串转换为创建指定大小的创建指定大小的可能包含敏感数据分配内存时不会清除内存残留的数据将数据转为字符串前端占用内存的大小一个汉字字节字符串的长度进制输出第一个元素创建一个个字节的通过索引来操作中的元素文件系统模块模块中所有的操作都有两种形式可供选择同步和异步同步文件系统会阻塞程序的执行也就是除非操作完毕否则不会向下执行代码异步文件系统不会阻塞程序的执行而是在操作完成时通过回调函数将结果返回实际开发很少用同步方式因此只介绍异步方式打开模式模式说明读取文件文件不存在抛异常读写文件文件不存在抛异常同步模式下打开文件用于读取同步模式下打开文件用于读写写文件不存在则创建存在则覆盖原有内容写文件文件存在打开失败读写文件不存在创建存在截断读写存在打开失败追加不存在创建追加存在失败追加和读取不存在创建追加和读取存在失败读取文件简单文件读取语法格式文件路径配置选项若是字符串则指定编码格式编码格式打开方式回调函数错误信息读取的数据如果未指定编码格式则返回一个复制文件内容笔记将写入到文件中文件写入成功流式文件读取简单文件读取的方式会一次性读取文件内容到内存中若文件较大会占用过多内存影响系统性能且读取速度慢大文件适合用流式文件读取它会分多次将文件读取到内存中创建一个可读流笔记创建一个可写流监听流的开启和关闭这几个监听不是必须的可读流打开了可读流关闭了数据读取完毕关闭可写流可写流打开了可写流关闭了要读取一个可读流中的数据要为可读流绑定一个事件事件绑定完毕自动开始读取数据将读取到的数据写入到可写流中简便方式笔记可以将可读流中的内容直接输出到可写流中写入文件简单文件写入语法格式文件路径写入内容配置选项包含若是字符串则指定编码格式回调函数通过写入的内容写入成功流式文件写入同步异步简单文件的写入都不适合大文件的写入性能较差容易导致内存溢出创建一个可写流流打开了流关闭了通过向文件中输出内容通过可写流写入文件的内容关闭流路径动态拼接问题在使用模块操作文件时如果提供的操作路径是以或开头的相对路径时容易出现路径动态拼接错误的问题原因代码在运行的时候会以执行命令时所处的目录动态拼接出被操作文件的完整路径解决方案在使用模块操作文件时直接提供完整的路径从而防止路径动态拼接的问题获取文件所处的绝对路径其它操作验证路径是否存在获取文件信息删除文件列出文件截断文件建立目录删除目录重命名文件和目录监视文件更改路径模块模块是官方提供的用来处理路径的模块它提供了一系列的方法和属性用来满足用户对路径的处理需求路径拼接注意会抵消前面的路径会被忽略获取路径中文件名使用方法可以获取路径中的最后一部分常通过该方法获取路径中的文件名文件路径文件扩展名定义文件的存放路径获取路径中文件扩展名模块模块是官方提供的用来创建服务器的模块创建基本服务器创建服务器实例为服务器实例绑定事件监听客户端的请求设置响应头解决中文乱码的问题向客户端响应内容实现简陋路由效果设置默认的响应内容为判断用户请求的是否为或首页判断用户请求的是否为关于页面首页关于页面模块化模块化概念模块化是指解决一个复杂问题时自顶向下逐层把系统划分为若干模块的过程模块是可组合分解和更换的单元模块化可提高代码的复用性和可维护性实现按需加载模块化规范是对代码进行模块化拆分和组合时需要遵守的规则如使用何种语法格式引用模块和向外暴露成员中模块的分类内置模块自定义模块第三方模块中的模块作用域和函数作用域类似在自定义模块中定义的变量方法等成员只能在当前模块内被访问这种模块级别的访问限制叫做模块作用域防止全局变量污染模块作用域的成员自定义模块中都有一个对象存储了和当前模块有关的信息在自定义模块中可以使用对象将模块内的成员共享出去供外界使用导入自定义模块时得到的就是指向的对象默认情况下和指向同一个对象最终共享的结果以指向的对象为准模块化规范每个模块内部变量代表当前模块变量是一个对象是对外的接口加载某个模块即加载该模块的属性模块加载机制模块第一次加载后会被缓存即多次调用不会导致模块的代码被执行多次提高模块加载效率内置模块加载内置模块加载优先级最高自定义模块加载加载自定义模块时路径要以或开头否则会作为内置模块或第三方模块加载导入自定义模块时若省略文件扩展名则会按顺序尝试加载文件按确切的文件名加载补全扩展名加载补全扩展名加载补全扩展名加载报错第三方模块加载若导入第三方模块会从当前模块的父目录开始尝试从文件夹中加载第三方模块如果没有找到对应的第三方模块则移动到再上一层父目录中进行加载直到文件系统的根目录例如假设在文件里调用了则会按以下顺序查找目录作为模块加载当把目录作为模块标识符进行加载的时候有三种加载方式在被加载的目录下查找的文件并寻找属性作为加载的入口如果没有文件或者入口不存在或无法解析则将会试图加载目录下的文件若失败则报错',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-09 22:49:28',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="你别睡这么晚！" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://avatars.githubusercontent.com/u/47170023?v=4"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://dont-sleep-so-late.github.io/" title="博客"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">你别睡这么晚！</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 文档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=150767257&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/wechatQRCode.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/wechatQRCode.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/qqQRCode.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/qqQRCode.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/API%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86/" style="font-size: 1.05rem;">API文档管理<sup>1</sup></a><a href="/tags/CSS/" style="font-size: 1.05rem;">CSS<sup>4</sup></a><a href="/tags/CSS-Less/" style="font-size: 1.05rem;">CSS Less<sup>1</sup></a><a href="/tags/CSS-flex/" style="font-size: 1.05rem;">CSS flex<sup>1</sup></a><a href="/tags/CSS-grid/" style="font-size: 1.05rem;">CSS grid<sup>1</sup></a><a href="/tags/ES6/" style="font-size: 1.05rem;">ES6<sup>1</sup></a><a href="/tags/Express/" style="font-size: 1.05rem;">Express<sup>1</sup></a><a href="/tags/Git/" style="font-size: 1.05rem;">Git<sup>3</sup></a><a href="/tags/HTML/" style="font-size: 1.05rem;">HTML<sup>1</sup></a><a href="/tags/HTTP/" style="font-size: 1.05rem;">HTTP<sup>1</sup></a><a href="/tags/JS-WebStorage/" style="font-size: 1.05rem;">JS WebStorage<sup>1</sup></a><a href="/tags/JS-array/" style="font-size: 1.05rem;">JS array<sup>1</sup></a><a href="/tags/JS-%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 1.05rem;">JS 模块化<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 1.05rem;">JavaScript<sup>4</sup></a><a href="/tags/Mybatis/" style="font-size: 1.05rem;">Mybatis<sup>2</sup></a><a href="/tags/MybatisPlus/" style="font-size: 1.05rem;">MybatisPlus<sup>1</sup></a><a href="/tags/Nodejs/" style="font-size: 1.05rem;">Nodejs<sup>3</sup></a><a href="/tags/OpenAPI-Swagger/" style="font-size: 1.05rem;">OpenAPI/Swagger<sup>1</sup></a><a href="/tags/Router/" style="font-size: 1.05rem;">Router<sup>1</sup></a><a href="/tags/Spring/" style="font-size: 1.05rem;">Spring<sup>3</sup></a><a href="/tags/SpringBoot/" style="font-size: 1.05rem;">SpringBoot<sup>1</sup></a><a href="/tags/SpringMVC/" style="font-size: 1.05rem;">SpringMVC<sup>1</sup></a><a href="/tags/TCP/" style="font-size: 1.05rem;">TCP<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 1.05rem;">Vue<sup>14</sup></a><a href="/tags/Vue3/" style="font-size: 1.05rem;">Vue3<sup>2</sup></a><a href="/tags/Vuex/" style="font-size: 1.05rem;">Vuex<sup>1</sup></a><a href="/tags/Vue%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">Vue核心基础<sup>1</sup></a><a href="/tags/Vue%E7%BB%84%E4%BB%B6/" style="font-size: 1.05rem;">Vue组件<sup>1</sup></a><a href="/tags/Vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%BC%96%E7%A8%8B/" style="font-size: 1.05rem;">Vue组件化编程<sup>1</sup></a><a href="/tags/Vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/" style="font-size: 1.05rem;">Vue组件间通信<sup>1</sup></a><a href="/tags/Vue%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" style="font-size: 1.05rem;">Vue网络请求<sup>1</sup></a><a href="/tags/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/" style="font-size: 1.05rem;">Vue脚手架<sup>1</sup></a><a href="/tags/axios/" style="font-size: 1.05rem;">axios<sup>1</sup></a><a href="/tags/css/" style="font-size: 1.05rem;">css<sup>1</sup></a><a href="/tags/mysql/" style="font-size: 1.05rem;">mysql<sup>1</sup></a><a href="/tags/sass/" style="font-size: 1.05rem;">sass<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 1.05rem;">前端开发<sup>1</sup></a><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" style="font-size: 1.05rem;">实用技巧<sup>1</sup></a><a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.05rem;">微信小程序<sup>4</sup></a><a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%AF%BC%E8%88%AA/" style="font-size: 1.05rem;">电子书导航<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">44</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">前端开发</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Nodejs/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Nodejs</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Nodejs基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-09-09T14:40:15.000Z" title="发表于 2023-09-09 22:40:15">2023-09-09</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-09-09T14:49:28.114Z" title="更新于 2023-09-09 22:49:28">2023-09-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">3.2k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="Nodejs基础"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为湛江"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>湛江</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://dont-sleep-so-late.github.io/2023/09/09/node_basis/"><header><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">前端开发</a><a href="/tags/Nodejs/" tabindex="-1" itemprop="url">Nodejs</a><h1 id="CrawlerTitle" itemprop="name headline">Nodejs基础</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">你别睡这么晚</span><time itemprop="dateCreated datePublished" datetime="2023-09-09T14:40:15.000Z" title="发表于 2023-09-09 22:40:15">2023-09-09</time><time itemprop="dateCreated datePublished" datetime="2023-09-09T14:49:28.114Z" title="更新于 2023-09-09 22:49:28">2023-09-09</time></header><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网传送门</a></p>
+<h2 id="初识-Nodejs"><a href="#初识-Nodejs" class="headerlink" title="初识 Nodejs"></a>初识 Nodejs</h2><p>tip Node.js®<br>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine</p>
+<p>Node.js® 是一个基于 Chrome V8 引擎 的 JavaScript 运行时环境</p>
+<ul>
+<li>基于 <a target="_blank" rel="noopener" href="http://www.expressjs.com.cn/">Express 框架</a>，可以快速构建 Web 应用</li>
+<li>基于 <a target="_blank" rel="noopener" href="https://electronjs.org/">Electron 框架</a>，可以构建跨平台的桌面应用</li>
+<li>基于 <a target="_blank" rel="noopener" href="http://restify.com/">restify 框架</a>，可以快速构建 API 接口项目</li>
+<li>读写和操作数据库、创建实用的命令行工具辅助前端开发、etc…</li>
+</ul>
+<h2 id="Buffer-缓冲区"><a href="#Buffer-缓冲区" class="headerlink" title="Buffer 缓冲区"></a>Buffer 缓冲区</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="http://nodejs.cn/api/buffer.html">Buffer 缓冲区文档</a></p>
+</blockquote>
+<ul>
+<li>Buffer 的结构与数组类似，操作方法也与数组类似</li>
+<li>数组不能存储二进制文件，Buffer 是专门存储二进制数据的</li>
+<li>Buffer 存储的是二进制数据，显示时以 16 进制的形式显示</li>
+<li>Buffer 每一个元素范围是 00<del>ff，即 0</del>255、00000000~11111111</li>
+<li>每一个元素占用一个字节内存</li>
+<li>Buffer 是对底层内存的直接操作，因此大小一旦确定就不能修改</li>
+</ul>
+<p>Buffer 常用方法：</p>
+<ul>
+<li><code>Buffer.from(str[, encoding])</code>：将一个字符串转换为 Buffer</li>
+<li><code>Buffer.alloc(size)</code>：创建指定大小的 Buffer</li>
+<li><code>Buffer.alloUnsafe(size)</code>：创建指定大小的 Buffer，可能包含敏感数据（分配内存时不会清除内存残留的数据）</li>
+<li><code>buf.toString()</code>：将 Buffer 数据转为字符串</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;Hello前端&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buf = <span class="title class_">Buffer</span>.<span class="title function_">from</span>(str)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 占用内存的大小，一个汉字3字节 13</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(buf.<span class="property">length</span>)</span><br><span class="line"><span class="comment">// 字符串的长度 7</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="property">length</span>)</span><br><span class="line"><span class="comment">// 8进制输出第一个元素 145</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(buf[<span class="number">1</span>].<span class="title function_">toString</span>(<span class="number">8</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个10个字节的buffer</span></span><br><span class="line"><span class="keyword">var</span> buf2 = <span class="title class_">Buffer</span>.<span class="title function_">alloc</span>(<span class="number">10</span>)</span><br><span class="line"><span class="comment">//通过索引，来操作buf中的元素</span></span><br><span class="line">buf2[<span class="number">0</span>] = <span class="number">88</span></span><br><span class="line">buf2[<span class="number">1</span>] = <span class="number">255</span></span><br><span class="line">buf2[<span class="number">2</span>] = <span class="number">0xaa</span></span><br><span class="line">buf2[<span class="number">3</span>] = <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buf3 = <span class="title class_">Buffer</span>.<span class="title function_">allocUnsafe</span>(<span class="number">10</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(buf3)</span><br></pre></td></tr></table></figure>
+
+<h2 id="fs-文件系统模块"><a href="#fs-文件系统模块" class="headerlink" title="fs 文件系统模块"></a>fs 文件系统模块</h2><ul>
+<li>fs 模块中所有的操作都有两种形式可供选择:同步和异步</li>
+<li>同步文件系统会阻塞程序的执行，也就是除非操作完毕，否则不会向下执行代码</li>
+<li>异步文件系统不会阻塞程序的执行，而是在操作完成时，通过回调函数将结果返回</li>
+<li>实际开发很少用同步方式，因此只介绍异步方式</li>
+</ul>
+<p>打开模式：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>读取文件，文件不存在抛异常</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>读写文件，文件不存在抛异常</td>
+</tr>
+<tr>
+<td>rs</td>
+<td>同步模式下打开文件用于读取</td>
+</tr>
+<tr>
+<td>rs+</td>
+<td>同步模式下打开文件用于读写</td>
+</tr>
+<tr>
+<td>w</td>
+<td>写文件，不存在则创建，存在则覆盖原有内容</td>
+</tr>
+<tr>
+<td>wx</td>
+<td>写文件，文件存在打开失败</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>读写文件，不存在创建，存在截断</td>
+</tr>
+<tr>
+<td>wx+</td>
+<td>读写，存在打开失败</td>
+</tr>
+<tr>
+<td>a</td>
+<td>追加，不存在创建</td>
+</tr>
+<tr>
+<td>ax</td>
+<td>追加，存在失败</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>追加和读取，不存在创建</td>
+</tr>
+<tr>
+<td>ax+</td>
+<td>追加和读取，存在失败</td>
+</tr>
+</tbody></table>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><h4 id="简单文件读取"><a href="#简单文件读取" class="headerlink" title="简单文件读取"></a>简单文件读取</h4><p>语法格式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(path[, options], callback)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>path</code>：文件路径</li>
+<li><code>options</code>：配置选项，若是字符串则指定编码格式<ul>
+<li><code>encoding</code>：编码格式</li>
+<li><code>flag</code>：打开方式</li>
+</ul>
+</li>
+<li><code>callback</code>：回调函数<ul>
+<li><code>err</code>：错误信息</li>
+<li><code>data</code>：读取的数据，如果未指定编码格式则返回一个 Buffer</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&#x27;./files/1.txt&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;failed!&#x27;</span> + err.<span class="property">message</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;content:&#x27;</span> + data)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 复制文件内容</span></span><br><span class="line">fs.<span class="title function_">readFile</span>(<span class="string">&quot;C:/Users/笔记.mp3&quot;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) &#123;</span><br><span class="line">	<span class="keyword">if</span>(!err) &#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">		<span class="comment">// 将data写入到文件中</span></span><br><span class="line">		fs.<span class="title function_">writeFile</span>(<span class="string">&quot;C:/Users/hello.jpg&quot;</span>, data, <span class="keyword">function</span>(<span class="params">err</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(!err)&#123;</span><br><span class="line">				<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;文件写入成功&quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="流式文件读取"><a href="#流式文件读取" class="headerlink" title="流式文件读取"></a>流式文件读取</h4><ul>
+<li>简单文件读取的方式会一次性读取文件内容到内存中，若文件较大，会占用过多内存影响系统性能，且读取速度慢</li>
+<li>大文件适合用流式文件读取，它会分多次将文件读取到内存中</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个可读流</span></span><br><span class="line"><span class="keyword">var</span> rs = fs.<span class="title function_">createReadStream</span>(<span class="string">&#x27;C:/Users/笔记.mp3&#x27;</span>)</span><br><span class="line"><span class="comment">// 创建一个可写流</span></span><br><span class="line"><span class="keyword">var</span> ws = fs.<span class="title function_">createWriteStream</span>(<span class="string">&#x27;a.mp3&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听流的开启和关闭</span></span><br><span class="line"><span class="comment">// 这几个监听不是必须的</span></span><br><span class="line">rs.<span class="title function_">once</span>(<span class="string">&#x27;open&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;可读流打开了~~&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">rs.<span class="title function_">once</span>(<span class="string">&#x27;close&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;可读流关闭了~~&#x27;</span>)</span><br><span class="line">  <span class="comment">//数据读取完毕，关闭可写流</span></span><br><span class="line">  ws.<span class="title function_">end</span>()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">ws.<span class="title function_">once</span>(<span class="string">&#x27;open&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;可写流打开了~~&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">ws.<span class="title function_">once</span>(<span class="string">&#x27;close&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;可写流关闭了~~&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//要读取一个可读流中的数据，要为可读流绑定一个data事件，data事件绑定完毕自动开始读取数据</span></span><br><span class="line">rs.<span class="title function_">on</span>(<span class="string">&#x27;data&#x27;</span>, <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">  <span class="comment">//将读取到的数据写入到可写流中</span></span><br><span class="line">  ws.<span class="title function_">write</span>(data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>简便方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> rs = fs.<span class="title function_">createReadStream</span>(<span class="string">&#x27;C:/Users/lilichao/Desktop/笔记.mp3&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> ws = fs.<span class="title function_">createWriteStream</span>(<span class="string">&#x27;b.mp3&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// pipe()可以将可读流中的内容，直接输出到可写流中</span></span><br><span class="line">rs.<span class="title function_">pipe</span>(ws)</span><br></pre></td></tr></table></figure>
+
+<h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><h4 id="简单文件写入"><a href="#简单文件写入" class="headerlink" title="简单文件写入"></a>简单文件写入</h4><p>语法格式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.<span class="title function_">writeFile</span>(file, data[, options], callback)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>file</code>：文件路径</li>
+<li><code>data</code>：写入内容</li>
+<li><code>options</code>：配置选项，包含 <code>encoding, mode, flag</code>；若是字符串则指定编码格式</li>
+<li><code>callback</code>：回调函数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;./files/2.txt&#x27;</span>, <span class="string">&#x27;Hello Nodejs&#x27;</span>, <span class="keyword">function</span> (<span class="params">err</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;failed!&#x27;</span> + err.<span class="property">message</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;success!&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;C:/Users/hello.txt&#x27;</span>, <span class="string">&#x27;通过 writeFile 写入的内容&#x27;</span>, &#123; <span class="attr">flag</span>: <span class="string">&#x27;w&#x27;</span> &#125;, <span class="keyword">function</span> (<span class="params">err</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!err) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;写入成功！&#x27;</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="流式文件写入"><a href="#流式文件写入" class="headerlink" title="流式文件写入"></a>流式文件写入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 同步、异步、简单文件的写入都不适合大文件的写入，性能较差，容易导致内存溢出</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个可写流</span></span><br><span class="line"><span class="keyword">var</span> ws = fs.<span class="title function_">createWriteStream</span>(<span class="string">&#x27;hello3.txt&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ws.<span class="title function_">once</span>(<span class="string">&#x27;open&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;流打开了~~&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">ws.<span class="title function_">once</span>(<span class="string">&#x27;close&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;流关闭了~~&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过ws向文件中输出内容</span></span><br><span class="line">ws.<span class="title function_">write</span>(<span class="string">&#x27;通过可写流写入文件的内容&#x27;</span>)</span><br><span class="line">ws.<span class="title function_">write</span>(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">ws.<span class="title function_">write</span>(<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line">ws.<span class="title function_">write</span>(<span class="string">&#x27;3&#x27;</span>)</span><br><span class="line">ws.<span class="title function_">write</span>(<span class="string">&#x27;4&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关闭流</span></span><br><span class="line">ws.<span class="title function_">end</span>()</span><br></pre></td></tr></table></figure>
+
+<h3 id="路径动态拼接问题-dirname"><a href="#路径动态拼接问题-dirname" class="headerlink" title="路径动态拼接问题 __dirname"></a>路径动态拼接问题 <code>__dirname</code></h3><ul>
+<li>在使用 fs 模块操作文件时，如果提供的操作路径是以 <code>./</code> 或 <code>../</code> 开头的相对路径时，容易出现路径动态拼接错误的问题</li>
+<li>原因：代码在运行的时候，会以执行 node 命令时所处的目录，动态拼接出被操作文件的完整路径</li>
+<li>解决方案：在使用 fs 模块操作文件时，直接提供完整的路径，从而防止路径动态拼接的问题</li>
+<li><code>__dirname</code> 获取文件所处的绝对路径</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(__dirname + <span class="string">&#x27;/files/1.txt&#x27;</span>, <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它操作"><a href="#其它操作" class="headerlink" title="其它操作"></a>其它操作</h3><p>验证路径是否存在：</p>
+<ul>
+<li><code>fs.exists(path, callback)</code></li>
+<li><code>fs.existsSync(path)</code></li>
+</ul>
+<p>获取文件信息：</p>
+<ul>
+<li><code>fs.stat(path, callback)</code></li>
+<li><code>fs.stat(path)</code></li>
+</ul>
+<p>删除文件：</p>
+<ul>
+<li><code>fs.unlink(path, callback)</code></li>
+<li><code>fs.unlinkSync(path)</code></li>
+</ul>
+<p>列出文件：</p>
+<ul>
+<li><code>fs.readdir(path[,options], callback)</code></li>
+<li><code>fs.readdirSync(path[, options])</code></li>
+</ul>
+<p>截断文件：</p>
+<ul>
+<li><code>fs.truncate(path, len, callback)</code></li>
+<li><code>fs.truncateSync(path, len)</code></li>
+</ul>
+<p>建立目录：</p>
+<ul>
+<li><code>fs.mkdir(path[, mode], callback)</code></li>
+<li><code>fs.mkdirSync(path[, mode])</code></li>
+</ul>
+<p>删除目录：</p>
+<ul>
+<li><code>fs.rmdir(path, callback)</code></li>
+<li><code>fs.rmdirSync(path)</code></li>
+</ul>
+<p>重命名文件和目录：</p>
+<ul>
+<li><code>fs.rename(oldPath, newPath, callback)</code></li>
+<li><code>fs.renameSync(oldPath, newPath)</code></li>
+</ul>
+<p>监视文件更改：</p>
+<ul>
+<li><code>fs.watchFile(filename[, options], listener)</code></li>
+</ul>
+<h2 id="path-路径模块"><a href="#path-路径模块" class="headerlink" title="path 路径模块"></a>path 路径模块</h2><p>path 模块是 Node.js 官方提供的、用来处理路径的模块。它提供了一系列的方法和属性，用来满足用户对路径的处理需求。</p>
+<h3 id="路径拼接-path-join"><a href="#路径拼接-path-join" class="headerlink" title="路径拼接 path.join()"></a>路径拼接 <code>path.join()</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意 ../ 会抵消前面的路径</span></span><br><span class="line"><span class="comment">// ./ 会被忽略</span></span><br><span class="line"><span class="keyword">const</span> pathStr = path.<span class="title function_">join</span>(<span class="string">&#x27;/a&#x27;</span>, <span class="string">&#x27;/b/c&#x27;</span>, <span class="string">&#x27;../../&#x27;</span>, <span class="string">&#x27;./d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(pathStr) <span class="comment">// \a\d\e</span></span><br><span class="line"></span><br><span class="line">fs.<span class="title function_">readFile</span>(path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;./files/1.txt&#x27;</span>), <span class="string">&#x27;utf8&#x27;</span>, <span class="keyword">function</span> (<span class="params">err, dataStr</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err.<span class="property">message</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(dataStr)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取路径中文件名-path-basename"><a href="#获取路径中文件名-path-basename" class="headerlink" title="获取路径中文件名 path.basename()"></a>获取路径中文件名 <code>path.basename()</code></h3><p>使用 <code>path.basename()</code> 方法，可以获取路径中的最后一部分，常通过该方法获取路径中的文件名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path.<span class="title function_">basename</span>(path[, ext])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>path: 文件路径</li>
+<li>ext: 文件扩展名</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义文件的存放路径</span></span><br><span class="line"><span class="keyword">const</span> fpath = <span class="string">&#x27;/a/b/c/index.html&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fullName = path.<span class="title function_">basename</span>(fpath)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fullName) <span class="comment">// index.html</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> nameWithoutExt = path.<span class="title function_">basename</span>(fpath, <span class="string">&#x27;.html&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nameWithoutExt) <span class="comment">// index</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取路径中文件扩展名-path-extname"><a href="#获取路径中文件扩展名-path-extname" class="headerlink" title="获取路径中文件扩展名 path.extname()"></a>获取路径中文件扩展名 <code>path.extname()</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fpath = <span class="string">&#x27;/a/b/c/index.html&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fext = path.<span class="title function_">extname</span>(fpath)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fext) <span class="comment">// .html</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h2><p>http 模块是 Node.js 官方提供的、用来创建 web 服务器的模块。</p>
+<h3 id="创建基本-Web-服务器"><a href="#创建基本-Web-服务器" class="headerlink" title="创建基本 Web 服务器"></a>创建基本 Web 服务器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建 web 服务器实例</span></span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为服务器实例绑定 request 事件，监听客户端的请求</span></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="keyword">function</span> (<span class="params">req, res</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> url = req.<span class="property">url</span></span><br><span class="line">  <span class="keyword">const</span> method = req.<span class="property">method</span></span><br><span class="line">  <span class="keyword">const</span> str = <span class="string">`Your request url is <span class="subst">$&#123;url&#125;</span>, and request method is <span class="subst">$&#123;method&#125;</span>`</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(str)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 设置 Content-Type 响应头，解决中文乱码的问题</span></span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html; charset=utf-8&#x27;</span>)</span><br><span class="line">  <span class="comment">// 向客户端响应内容</span></span><br><span class="line">  res.<span class="title function_">end</span>(str)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">8080</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server running at http://127.0.0.1:8080&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现简陋路由效果"><a href="#实现简陋路由效果" class="headerlink" title="实现简陋路由效果"></a>实现简陋路由效果</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> server = http.<span class="title function_">createServer</span>()</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">on</span>(<span class="string">&#x27;request&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> url = req.<span class="property">url</span></span><br><span class="line">  <span class="comment">// 设置默认的响应内容为 404 Not found</span></span><br><span class="line">  <span class="keyword">let</span> content = <span class="string">&#x27;&lt;h1&gt;404 Not found!&lt;/h1&gt;&#x27;</span></span><br><span class="line">  <span class="comment">// 判断用户请求的是否为 / 或 /index.html 首页</span></span><br><span class="line">  <span class="comment">// 判断用户请求的是否为 /about.html 关于页面</span></span><br><span class="line">  <span class="keyword">if</span> (url === <span class="string">&#x27;/&#x27;</span> || url === <span class="string">&#x27;/index.html&#x27;</span>) &#123;</span><br><span class="line">    content = <span class="string">&#x27;&lt;h1&gt;首页&lt;/h1&gt;&#x27;</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">&#x27;/about.html&#x27;</span>) &#123;</span><br><span class="line">    content = <span class="string">&#x27;&lt;h1&gt;关于页面&lt;/h1&gt;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  res.<span class="title function_">setHeader</span>(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/html; charset=utf-8&#x27;</span>)</span><br><span class="line">  res.<span class="title function_">end</span>(content)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.<span class="title function_">listen</span>(<span class="number">80</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;server running at http://127.0.0.1&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="模块化概念"><a href="#模块化概念" class="headerlink" title="模块化概念"></a>模块化概念</h3><ul>
+<li>模块化是指解决一个复杂问题时，自顶向下逐层把系统划分为若干模块的过程，模块是可组合、分解和更换的单元。</li>
+<li>模块化可提高代码的复用性和可维护性，实现按需加载。</li>
+<li>模块化规范是对代码进行模块化拆分和组合时需要遵守的规则，如使用何种语法格式引用模块和向外暴露成员。</li>
+</ul>
+<h3 id="Node-js-中模块的分类"><a href="#Node-js-中模块的分类" class="headerlink" title="Node.js 中模块的分类"></a>Node.js 中模块的分类</h3><ul>
+<li>内置模块</li>
+<li>自定义模块</li>
+<li>第三方模块</li>
+</ul>
+<h3 id="Node-js-中的模块作用域"><a href="#Node-js-中的模块作用域" class="headerlink" title="Node.js 中的模块作用域"></a>Node.js 中的模块作用域</h3><ul>
+<li>和函数作用域类似，在自定义模块中定义的变量、方法等成员，只能在当前模块内被访问，这种模块级别的访问限制，叫做模块作用域</li>
+<li>防止全局变量污染</li>
+</ul>
+<h3 id="模块作用域的成员"><a href="#模块作用域的成员" class="headerlink" title="模块作用域的成员"></a>模块作用域的成员</h3><ul>
+<li>自定义模块中都有一个 <code>module</code> 对象，存储了和当前模块有关的信息</li>
+<li>在自定义模块中，可以使用 <code>module.exports</code> 对象，将模块内的成员共享出去，供外界使用。导入自定义模块时，得到的就是 <code>module.exports</code> 指向的对象。</li>
+<li>默认情况下，<code>exports</code> 和 <code>module.exports</code> 指向同一个对象。最终共享的结果，以 <code>module.exports</code> 指向的对象为准。</li>
+</ul>
+<h3 id="CommonJS-模块化规范"><a href="#CommonJS-模块化规范" class="headerlink" title="CommonJS 模块化规范"></a>CommonJS 模块化规范</h3><ul>
+<li>每个模块内部，<code>module</code> 变量代表当前模块</li>
+<li><code>module</code> 变量是一个对象，<code>module.exports</code> 是对外的接口</li>
+<li>加载某个模块即加载该模块的 <code>module.exports</code> 属性</li>
+</ul>
+<h3 id="模块加载机制"><a href="#模块加载机制" class="headerlink" title="模块加载机制"></a>模块加载机制</h3><p>模块第一次加载后会被缓存，即多次调用 <code>require()</code> 不会导致模块的代码被执行多次，提高模块加载效率。</p>
+<h4 id="内置模块加载"><a href="#内置模块加载" class="headerlink" title="内置模块加载"></a>内置模块加载</h4><p>内置模块加载优先级最高。</p>
+<h4 id="自定义模块加载"><a href="#自定义模块加载" class="headerlink" title="自定义模块加载"></a>自定义模块加载</h4><p>加载自定义模块时，路径要以 <code>./</code> 或 <code>../</code> 开头，否则会作为内置模块或第三方模块加载。</p>
+<p>导入自定义模块时，若省略文件扩展名，则 Node.js 会按顺序尝试加载文件：</p>
+<ul>
+<li>按确切的文件名加载</li>
+<li>补全 <code>.js</code> 扩展名加载</li>
+<li>补全 <code>.json</code> 扩展名加载</li>
+<li>补全 <code>.node</code> 扩展名加载</li>
+<li>报错</li>
+</ul>
+<h4 id="第三方模块加载"><a href="#第三方模块加载" class="headerlink" title="第三方模块加载"></a>第三方模块加载</h4><ul>
+<li>若导入第三方模块， Node.js 会从<strong>当前模块的父目录</strong>开始，尝试从 <code>/node_modules</code> 文件夹中加载第三方模块。</li>
+<li>如果没有找到对应的第三方模块，则移动到再<strong>上一层父目录</strong>中，进行加载，直到<strong>文件系统的根目录</strong>。</li>
+</ul>
+<p>例如，假设在 <code>C:\Users\bruce\project\foo.js</code> 文件里调用了 <code>require(&#39;tools&#39;)</code>，则 Node.js 会按以下顺序查找：</p>
+<ul>
+<li><code>C:\Users\bruce\project\node_modules\tools</code></li>
+<li><code>C:\Users\bruce\node_modules\tools</code></li>
+<li><code>C:\Users\node_modules\tools</code></li>
+<li><code>C:\node_modules\tools</code></li>
+</ul>
+<h4 id="目录作为模块加载"><a href="#目录作为模块加载" class="headerlink" title="目录作为模块加载"></a>目录作为模块加载</h4><p>当把目录作为模块标识符进行加载的时候，有三种加载方式：</p>
+<ul>
+<li>在被加载的目录下查找 <code>package.json</code> 的文件，并寻找 <code>main</code> 属性，作为 <code>require()</code> 加载的入口</li>
+<li>如果没有 <code>package.json</code> 文件，或者 <code>main</code> 入口不存在或无法解析，则 Node.js 将会试图加载目录下的 <code>index.js</code> 文件。</li>
+<li>若失败则报错</li>
+</ul>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/47170023?v=4" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/47170023?v=4" title="头像" alt="头像"></a><div class="post-copyright__author_name">你别睡这么晚</div><div class="post-copyright__author_desc">我有一只小兔兔🐇</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://dont-sleep-so-late.github.io/2023/09/09/node_basis/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://dont-sleep-so-late.github.io/2023/09/09/node_basis/')">Nodejs基础</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/wechatQRCode.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/wechatQRCode.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/qqQRCode.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/dont-sleep-so-late/CDN/images/qqQRCode.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://dont-sleep-so-late.github.io/2023/09/09/node_basis/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Nodejs基础&amp;url=https://dont-sleep-so-late.github.io/2023/09/09/node_basis/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://dont-sleep-so-late.github.io" target="_blank">你别睡这么晚！</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Nodejs/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Nodejs<span class="tagsPageCount">3</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://avatars.githubusercontent.com/u/47170023?v=4" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/08/var%20that%20=%20this%E7%9A%84%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">var that =this 的用法详解</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/09/express/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Express</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2023/09/09/ev_api_server/" title="大事件后台 API 项目"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-09-09</div><div class="title">大事件后台 API 项目</div></div></a></div><div><a href="/2023/09/09/mysql/" title="数据库和身份认证"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-09-09</div><div class="title">数据库和身份认证</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/47170023?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://emotion.acs.pw/emotion/tieba/彩虹.png" ait="status"/></div></div><div class="author-info__description">一个学习笔记网站</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">你别睡这么晚</h1><div class="author-info__desc">我有一只小兔兔🐇</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/dont-sleep-so-late" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/14680267" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86-Nodejs"><span class="toc-number">1.</span> <span class="toc-text">初识 Nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Buffer-%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">Buffer 缓冲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fs-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9D%97"><span class="toc-number">3.</span> <span class="toc-text">fs 文件系统模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.</span> <span class="toc-text">读取文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-number">3.1.1.</span> <span class="toc-text">简单文件读取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E5%BC%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-number">3.1.2.</span> <span class="toc-text">流式文件读取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">写入文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5"><span class="toc-number">3.2.1.</span> <span class="toc-text">简单文件写入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E5%BC%8F%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5"><span class="toc-number">3.2.2.</span> <span class="toc-text">流式文件写入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%8A%A8%E6%80%81%E6%8B%BC%E6%8E%A5%E9%97%AE%E9%A2%98-dirname"><span class="toc-number">3.3.</span> <span class="toc-text">路径动态拼接问题 __dirname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E6%93%8D%E4%BD%9C"><span class="toc-number">3.4.</span> <span class="toc-text">其它操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#path-%E8%B7%AF%E5%BE%84%E6%A8%A1%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">path 路径模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E6%8B%BC%E6%8E%A5-path-join"><span class="toc-number">4.1.</span> <span class="toc-text">路径拼接 path.join()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%B7%AF%E5%BE%84%E4%B8%AD%E6%96%87%E4%BB%B6%E5%90%8D-path-basename"><span class="toc-number">4.2.</span> <span class="toc-text">获取路径中文件名 path.basename()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%B7%AF%E5%BE%84%E4%B8%AD%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D-path-extname"><span class="toc-number">4.3.</span> <span class="toc-text">获取路径中文件扩展名 path.extname()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-%E6%A8%A1%E5%9D%97"><span class="toc-number">5.</span> <span class="toc-text">http 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9F%BA%E6%9C%AC-Web-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">5.1.</span> <span class="toc-text">创建基本 Web 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%AE%80%E9%99%8B%E8%B7%AF%E7%94%B1%E6%95%88%E6%9E%9C"><span class="toc-number">5.2.</span> <span class="toc-text">实现简陋路由效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E6%A6%82%E5%BF%B5"><span class="toc-number">6.1.</span> <span class="toc-text">模块化概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js-%E4%B8%AD%E6%A8%A1%E5%9D%97%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">6.2.</span> <span class="toc-text">Node.js 中模块的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js-%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">6.3.</span> <span class="toc-text">Node.js 中的模块作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E6%88%90%E5%91%98"><span class="toc-number">6.4.</span> <span class="toc-text">模块作用域的成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CommonJS-%E6%A8%A1%E5%9D%97%E5%8C%96%E8%A7%84%E8%8C%83"><span class="toc-number">6.5.</span> <span class="toc-text">CommonJS 模块化规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6"><span class="toc-number">6.6.</span> <span class="toc-text">模块加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD"><span class="toc-number">6.6.1.</span> <span class="toc-text">内置模块加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD"><span class="toc-number">6.6.2.</span> <span class="toc-text">自定义模块加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD"><span class="toc-number">6.6.3.</span> <span class="toc-text">第三方模块加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E4%BD%9C%E4%B8%BA%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD"><span class="toc-number">6.6.4.</span> <span class="toc-text">目录作为模块加载</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/28/Vue3%E5%AD%A6%E4%B9%A0(%E6%96%B0)/" title="Vue3学习">Vue3学习</a><time datetime="2024-01-28T15:31:36.000Z" title="发表于 2024-01-28 23:31:36">2024-01-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/15/%E8%A7%86%E9%A2%91%E7%B4%A0%E6%9D%90/" title="视频素材">视频素材</a><time datetime="2023-12-15T14:31:36.000Z" title="发表于 2023-12-15 22:31:36">2023-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/15/%E5%AD%97%E4%BD%93%E5%AF%BC%E8%88%AA/" title="字体导航">字体导航</a><time datetime="2023-12-15T14:30:36.000Z" title="发表于 2023-12-15 22:30:36">2023-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/15/%E9%9F%B3%E4%B9%90%E7%B4%A0%E6%9D%90/" title="音乐素材">音乐素材</a><time datetime="2023-12-15T14:27:36.000Z" title="发表于 2023-12-15 22:27:36">2023-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/15/%E6%B8%B8%E6%88%8F%E5%AF%BC%E8%88%AA/" title="游戏导航">游戏导航</a><time datetime="2023-12-15T14:25:36.000Z" title="发表于 2023-12-15 22:25:36">2023-12-15</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2023 - 2024 By <a class="footer-bar-link" href="/" title="你别睡这么晚" target="_blank">你别睡这么晚</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-Theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">61</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">51</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">6</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://dont-sleep-so-late.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 文档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/?id=150767257&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/API%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86/" style="font-size: 0.88rem;">API文档管理<sup>1</sup></a><a href="/tags/CSS/" style="font-size: 0.88rem;">CSS<sup>4</sup></a><a href="/tags/CSS-Less/" style="font-size: 0.88rem;">CSS Less<sup>1</sup></a><a href="/tags/CSS-flex/" style="font-size: 0.88rem;">CSS flex<sup>1</sup></a><a href="/tags/CSS-grid/" style="font-size: 0.88rem;">CSS grid<sup>1</sup></a><a href="/tags/ES6/" style="font-size: 0.88rem;">ES6<sup>1</sup></a><a href="/tags/Express/" style="font-size: 0.88rem;">Express<sup>1</sup></a><a href="/tags/Git/" style="font-size: 0.88rem;">Git<sup>3</sup></a><a href="/tags/HTML/" style="font-size: 0.88rem;">HTML<sup>1</sup></a><a href="/tags/HTTP/" style="font-size: 0.88rem;">HTTP<sup>1</sup></a><a href="/tags/JS-WebStorage/" style="font-size: 0.88rem;">JS WebStorage<sup>1</sup></a><a href="/tags/JS-array/" style="font-size: 0.88rem;">JS array<sup>1</sup></a><a href="/tags/JS-%E6%A8%A1%E5%9D%97%E5%8C%96/" style="font-size: 0.88rem;">JS 模块化<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 0.88rem;">JavaScript<sup>4</sup></a><a href="/tags/Mybatis/" style="font-size: 0.88rem;">Mybatis<sup>2</sup></a><a href="/tags/MybatisPlus/" style="font-size: 0.88rem;">MybatisPlus<sup>1</sup></a><a href="/tags/Nodejs/" style="font-size: 0.88rem;">Nodejs<sup>3</sup></a><a href="/tags/OpenAPI-Swagger/" style="font-size: 0.88rem;">OpenAPI/Swagger<sup>1</sup></a><a href="/tags/Router/" style="font-size: 0.88rem;">Router<sup>1</sup></a><a href="/tags/Spring/" style="font-size: 0.88rem;">Spring<sup>3</sup></a><a href="/tags/SpringBoot/" style="font-size: 0.88rem;">SpringBoot<sup>1</sup></a><a href="/tags/SpringMVC/" style="font-size: 0.88rem;">SpringMVC<sup>1</sup></a><a href="/tags/TCP/" style="font-size: 0.88rem;">TCP<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 0.88rem;">Vue<sup>14</sup></a><a href="/tags/Vue3/" style="font-size: 0.88rem;">Vue3<sup>2</sup></a><a href="/tags/Vuex/" style="font-size: 0.88rem;">Vuex<sup>1</sup></a><a href="/tags/Vue%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/" style="font-size: 0.88rem;">Vue核心基础<sup>1</sup></a><a href="/tags/Vue%E7%BB%84%E4%BB%B6/" style="font-size: 0.88rem;">Vue组件<sup>1</sup></a><a href="/tags/Vue%E7%BB%84%E4%BB%B6%E5%8C%96%E7%BC%96%E7%A8%8B/" style="font-size: 0.88rem;">Vue组件化编程<sup>1</sup></a><a href="/tags/Vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/" style="font-size: 0.88rem;">Vue组件间通信<sup>1</sup></a><a href="/tags/Vue%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" style="font-size: 0.88rem;">Vue网络请求<sup>1</sup></a><a href="/tags/Vue%E8%84%9A%E6%89%8B%E6%9E%B6/" style="font-size: 0.88rem;">Vue脚手架<sup>1</sup></a><a href="/tags/axios/" style="font-size: 0.88rem;">axios<sup>1</sup></a><a href="/tags/css/" style="font-size: 0.88rem;">css<sup>1</sup></a><a href="/tags/mysql/" style="font-size: 0.88rem;">mysql<sup>1</sup></a><a href="/tags/sass/" style="font-size: 0.88rem;">sass<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" style="font-size: 0.88rem;">前端开发<sup>1</sup></a><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/" style="font-size: 0.88rem;">实用技巧<sup>1</sup></a><a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 0.88rem;">微信小程序<sup>4</sup></a><a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%AF%BC%E8%88%AA/" style="font-size: 0.88rem;">电子书导航<sup>1</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="150767257" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/#/playlist?id=150767257&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("09/05/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.6",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 你别睡这么晚 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="https://cdn.cbd.int/algoliasearch@4.18.0/dist/algoliasearch-lite.umd.js"></script><script src="https://cdn.cbd.int/instantsearch.js@4.56.5/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "visitor@anheyu.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
